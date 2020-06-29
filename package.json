@@ -9,6 +9,7 @@
   "author": "yzITI",
   "license": "GPL-3.0-or-later",
   "dependencies": {
+    "axios": "^0.19.2",
     "express": "^4.17.1",
     "mongodb": "^3.5.9"
   }
