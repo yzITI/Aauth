@@ -6,13 +6,16 @@
 
 const express = require('express')
 
-const moduleList = []
+const moduleList = ['login']
 let modules = {}
 
 // load all modules
 for (let m of moduleList) {
   modules[m] = require(`./${m}`)
 }
+
+// middleware
+const middleware = require('./middleware')
 
 // express server
 const app = express()
@@ -30,6 +33,9 @@ app.listen(7777, () => {
 })
 
 // API routers
-api.get('/', (req, resp) => {
-  resp.send('Aauth')
-})
+
+// login
+api.get('/login', modules.login.Prepare)
+api.post('/login/:platform', modules.login.Oauth)
+api.put('/login', middleware.User, modules.login.Generate)
+api.post('/login', modules.login.Verify)
