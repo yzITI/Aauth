@@ -1,0 +1,68 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(#ad2102, #ffe7ba);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+a.github {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+img {
+  width: 32px;
+  height: 32px;
+}
+
+h1 {
+  color: white;
+  font-size: 8rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+h2 {
+  color: #fff7e6;
+  margin-bottom: 130px;
+  min-width: 320px;
+}
+
+.button {
+  position: relative;
+  width: 280px;
+  margin: 20px;
+  padding: 15px;
+}
+
+.button img {
+  position: absolute;
+  top: 8px;
+  left: 20px;
+}
+
+div.developer {
+  background: #fff7e6;
+  color: #ad2102;
+}
+
+div.user {
+  background: #ad2102;
+  color: white;
+}
+
+.footer {
+  position: absolute;
+  bottom: 3px;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 5rem;
+  }
+}
