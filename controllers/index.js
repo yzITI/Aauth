@@ -36,6 +36,6 @@ app.listen(7777, () => {
 
 // login
 api.get('/login', modules.login.Prepare)
-api.post('/login/:platform', modules.login.Oauth)
+api.post('/login/:platform', modules.login.Login)
 api.put('/login', middleware.User, modules.login.Generate)
 api.post('/login', modules.login.Verify)

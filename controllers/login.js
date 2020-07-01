@@ -3,12 +3,26 @@
 * Login flow handles
 */
 
+const login = require('../services/login')
+
 // GET
 exports.Prepare = async function (req, res) {
 }
 
 // POST
-exports.Oauth = async function (req, res) {
+exports.Login = async function (req, res) {
+  const platform = req.params.platform
+  const code = req.body.code
+  if (!code) {
+    res.status(400).send('Parameters Error: \"code\" required.')
+    return
+  }
+  const result = await login.Login(platform, code)
+  if (!result) {
+    res.status(403).send('Login Failed.')
+    return
+  }
+  res.send(result)
 }
 
 // PUT

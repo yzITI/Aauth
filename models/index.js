@@ -5,9 +5,11 @@
 
 const mongodb = require('mongodb')
 
-const { db } = require('../config')
+const config = require('../config')
 
-const url = `mongodb://${db.username}:${db.password}@${db.host}:${String(db.port)}/?authSource=${db.authSource}`
+const c = config.mongodb
+
+const url = `mongodb://${c.username}:${c.password}@${c.host}:${String(c.port)}/?authSource=${c.authSource}`
 
 const client = new mongodb.MongoClient(url, { useUnifiedTopology: true })
 
@@ -15,7 +17,7 @@ let DB
 
 client.connect(err => {
   if (err) throw err
-  DB = client.db(db.db)
+  DB = client.db(c.db)
 })
 
 module.exports = () => {

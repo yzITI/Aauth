@@ -5,8 +5,9 @@
 
 const oauths = require('../oauths')
 
-// login to a platform
-exports.Oauth = async function(platform, code) {
-  if (!oauths[platform]) return false // platform not exists
-  else return await oauths[platform](code)
+// central Login processing
+exports.Login = async function (platform, code) {
+  let res = await oauths(platform, code)
+  if (!res) return false
+  return res
 }
