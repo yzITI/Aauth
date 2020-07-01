@@ -6,13 +6,8 @@
 
 const express = require('express')
 
-const moduleList = ['login']
-let modules = {}
-
-// load all modules
-for (let m of moduleList) {
-  modules[m] = require(`./${m}`)
-}
+// modules
+const login = require('./login')
 
 // middleware
 const middleware = require('./middleware')
@@ -35,7 +30,7 @@ app.listen(7777, () => {
 // API routers
 
 // login
-api.get('/login/:id', modules.login.Prepare)
-api.post('/login/:platform', modules.login.Login)
-api.put('/login', middleware.User, modules.login.Generate)
-api.post('/login', modules.login.Verify)
+api.get('/login/:id', login.Prepare)
+api.post('/login/:platform', login.Login)
+api.put('/login', middleware.User, login.Generate)
+api.post('/login', login.Verify)
