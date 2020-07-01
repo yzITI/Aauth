@@ -22,7 +22,8 @@ exports.Login = async function (req, res) {
     res.status(403).send('Login Failed.')
     return
   }
-  res.send(result)
+  res.header('token', result.token)
+  res.send(result.user)
 }
 
 // PUT

@@ -10,6 +10,7 @@ const user = require('../models/user')
 // utils
 const crypto = require('../utils/crypto')
 const time = require('../utils/time')
+const token = require('../utils/token')
 
 // central Login processing
 exports.Login = async function (platform, code) {
@@ -28,5 +29,11 @@ exports.Login = async function (platform, code) {
   await user.Upsert({ _id: u }, setting)
   const users = await user.Find({ _id: u })
   if (!users.length) return false
-  else return users[0]
+  // generate token
+  const t = crypto.RandomString(32)
+  token.Set(t, u)
+  return {
+    token: t,
+    user: users[0]
+  }
 }
