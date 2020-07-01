@@ -35,7 +35,7 @@ app.listen(7777, () => {
 // API routers
 
 // login
-api.get('/login', modules.login.Prepare)
+api.get('/login/:id', modules.login.Prepare)
 api.post('/login/:platform', modules.login.Login)
 api.put('/login', middleware.User, modules.login.Generate)
 api.post('/login', modules.login.Verify)
