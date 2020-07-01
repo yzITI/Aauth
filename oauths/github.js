@@ -26,7 +26,7 @@ module.exports = async function (code) {
     .catch(err => false)
   if (!info) return false
   return {
-    _id: `github-${info.id}`,
+    id: `github-${info.id}`,
     raw: info,
     identity: {
       virtual: false,
