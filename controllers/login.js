@@ -67,7 +67,7 @@ exports.Verify = async function (req, res) {
   }
   const result = await login.Verify(appId, appSecret, code)
   if (!result) {
-    res.status(403).send('Error. (reason is not available for security requirement)')
+    res.status(403).send('Error. (reason is not available due to security requirement)')
     return
   }
   res.send(result)

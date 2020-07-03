@@ -21,7 +21,9 @@ module.exports = async function (code) {
   // generate authorization header
   const token = Buffer.from(`token:${accessToken}`, 'utf8').toString('base64')
   const info = await axios // get user info
-    .get('https://api.github.com/user',{ headers: { Authorization: `Basic ${token}` } })
+    .get('https://api.github.com/user', {
+      headers: { Authorization: `Basic ${token}` }
+    })
     .then(resp => resp.data)
     .catch(err => false)
   if (!info) return false
@@ -34,7 +36,8 @@ module.exports = async function (code) {
       username: info.login,
       email: info.email,
       avatar: info.avatar_url,
-      company: info.company
+      company: info.company,
+      location: info.location
     }
   }
 }
