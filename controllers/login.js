@@ -13,7 +13,7 @@ exports.Prepare = async function (req, res) {
   const id = req.params.id
   const result = await app.Find({ _id: id })
   if (!result.length) {
-    result.status(404).send('App not found.')
+    res.status(404).send('App not found.')
     return
   }
   res.send({
