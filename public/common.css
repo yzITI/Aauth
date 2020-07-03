@@ -1,0 +1,29 @@
+* {
+  outline: none;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.rounded {
+  border-radius: 1000px;
+}
+
+.button {
+  font-family: sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 1px 1px 3px #666;
+}
+
+.button:hover {
+  box-shadow: 3px 3px 9px #666;
+}
