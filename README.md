@@ -15,4 +15,6 @@ Under this circumstance, Aauth wants to provide a unified fourth party login ser
 
 ## Platforms
 
-Supported third party login platforms are:
+Supported third party login platforms (and administrators) are:
+
+- Github (Phantomlsh)
