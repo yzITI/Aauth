@@ -18,3 +18,4 @@ Under this circumstance, Aauth wants to provide a unified fourth party login ser
 Supported third party login platforms (and administrators) are:
 
 - Github (Phantomlsh)
+- [Facebook](https://www.facebook.com/v7.0/dialog/oauth?client_id=2681638152083114&redirect_uri=https://aauth.link/callback&state=facebook-) (Tiffanyzhoujh)
