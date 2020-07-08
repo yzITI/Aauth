@@ -3,7 +3,7 @@
 * Main Interface
 */
 
-const moduleList = ['github']
+const moduleList = ['github', 'facebook']
 let modules = {}
 
 // load all modules
