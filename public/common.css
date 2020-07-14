@@ -10,6 +10,12 @@ body {
 a {
   cursor: pointer;
   text-decoration: none;
+  color: black;
+}
+
+img{
+  height: 60px;
+  width: 60px;
 }
 
 .rounded {
@@ -25,5 +31,34 @@ a {
 }
 
 .button:hover {
+  box-shadow: 3px 3px 9px #666;
+}
+
+div .card{
+  height: 100px;
+  width: 100px;
+  padding: 25px 25px 25px 25px;
+  border-radius: 10px;
+  margin: 0px;
+  cursor: pointer;
+  text-align: center;
+  float: left;
+  transition: all 0.5s ease;
+}
+
+div.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card:hover {
   box-shadow: 3px 3px 9px #666;
 }
